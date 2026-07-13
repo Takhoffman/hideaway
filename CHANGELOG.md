@@ -4,6 +4,11 @@ All notable changes to Hideaway will be documented here. The project follows [Se
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced manual app-bundle assembly with a universal, hardened-runtime Xcode archive signed with Developer ID.
+- Moved Sparkle embedding and helper signing into the Xcode build system.
+
 ## [0.1.0] - 2026-07-13
 
 ### Added

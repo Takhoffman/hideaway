@@ -27,13 +27,13 @@ Hideaway snapshots every preference before it makes a change. Click **Restore My
 
 Download the latest `Hideaway.app` archive from [GitHub Releases](https://github.com/Takhoffman/hideaway/releases/latest), unzip it, and move the app to Applications.
 
-Community builds are not yet Apple-notarized. On first launch, Control-click Hideaway, choose **Open**, then confirm **Open**. Subsequent launches work normally; in-app updates are protected by Sparkle signatures.
+The current release predates Developer ID signing and notarization. On first launch, Control-click Hideaway, choose **Open**, then confirm **Open**. The next release will use the repository's Developer ID archive pipeline; in-app updates remain protected by Sparkle signatures.
 
 Hideaway checks for signed updates automatically with [Sparkle](https://sparkle-project.org/). You can also choose **Check for Updates…** from the popover.
 
 ## Build from source
 
-You need macOS 13 or newer and the current Xcode Command Line Tools.
+You need macOS 13 or newer and the current version of Xcode.
 
 ```sh
 git clone https://github.com/Takhoffman/hideaway.git
@@ -41,12 +41,14 @@ cd hideaway
 swift run Hideaway
 ```
 
-`swift run` is convenient for development, but it does not include app-bundle metadata or automatic updates. To build the distributable universal app:
+`swift run` is convenient for development, but it does not include app-bundle metadata or automatic updates. The committed Xcode project is the distributable app target. To create a universal Developer ID archive:
 
 ```sh
-Scripts/build-app.sh 0.1.0 1
+Scripts/build-app.sh 0.1.1 2
 open dist/Hideaway.app
 ```
+
+Continuous integration passes `CODE_SIGN_IDENTITY=-` to produce an ad-hoc test archive. Maintainer release builds use the Developer ID identity configured in the Xcode project.
 
 ## Safety and privacy
 

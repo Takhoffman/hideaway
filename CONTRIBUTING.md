@@ -24,9 +24,9 @@ Never test against a Mac whose current Finder, Dock, widget, or menu-bar setting
 Releases are published from the maintainer's Mac so the Sparkle private key never leaves the local Keychain.
 
 1. Update `CHANGELOG.md`, commit, and ensure CI is green.
-2. Confirm Sparkle's signing key for account `com.takhoffman.hideaway` is available in the local Keychain.
-3. Run `Scripts/release.sh 0.1.0` with the intended semantic version.
-4. The script builds a universal app, creates a signed zip, publishes a GitHub Release, and commits the updated signed appcast to `main`.
+2. Confirm the `Developer ID Application: Takayuki Hoffman (KF4GF4J4K9)` identity and Sparkle signing key for account `com.takhoffman.hideaway` are available in the local Keychain.
+3. Run `Scripts/release.sh 0.1.1` with the intended semantic version.
+4. The script creates a universal hardened-runtime Xcode archive, creates a Sparkle-signed zip, publishes a GitHub Release, and commits the updated signed appcast to `main`.
 5. Install the release archive on a clean account and verify **Check for Updates…** before announcing it.
 
-For a production Developer ID release, set `CODE_SIGN_IDENTITY` and add the corresponding signing/notarization setup to the workflow. Sparkle's EdDSA signature still protects update archives independently.
+Developer ID signing is configured in `Hideaway.xcodeproj`. Notarization is the remaining distribution step; Sparkle's EdDSA signature protects update archives independently.

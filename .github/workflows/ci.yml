@@ -20,4 +20,6 @@ jobs:
       - name: Test
         run: swift test
       - name: Build distributable app
+        env:
+          CODE_SIGN_IDENTITY: "-"
         run: Scripts/build-app.sh 0.0.0 "$GITHUB_RUN_NUMBER"
