@@ -21,12 +21,12 @@ Never test against a Mac whose current Finder, Dock, widget, or menu-bar setting
 
 ## Releasing
 
-Releases are automated by `.github/workflows/release.yml`.
+Releases are published from the maintainer's Mac so the Sparkle private key never leaves the local Keychain.
 
 1. Update `CHANGELOG.md`, commit, and ensure CI is green.
-2. Confirm the repository secret `SPARKLE_PRIVATE_KEY` contains the base64 private key exported from Sparkle's `generate_keys` tool for account `com.takhoffman.hideaway`.
-3. Create and push a semantic-version tag such as `v0.1.0`.
-4. The workflow builds a universal app, creates a signed zip, publishes a GitHub Release, and commits the updated signed appcast to `main`.
+2. Confirm Sparkle's signing key for account `com.takhoffman.hideaway` is available in the local Keychain.
+3. Run `Scripts/release.sh 0.1.0` with the intended semantic version.
+4. The script builds a universal app, creates a signed zip, publishes a GitHub Release, and commits the updated signed appcast to `main`.
 5. Install the release archive on a clean account and verify **Check for Updates…** before announcing it.
 
 For a production Developer ID release, set `CODE_SIGN_IDENTITY` and add the corresponding signing/notarization setup to the workflow. Sparkle's EdDSA signature still protects update archives independently.

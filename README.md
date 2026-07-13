@@ -56,7 +56,7 @@ An interrupted stash remains recoverable: Hideaway records the active session be
 
 ## Automatic updates and releases
 
-Release archives are signed with a project-specific Sparkle EdDSA key. The public key is embedded in the app; the private key is kept outside the repository. Tagged releases generate a signed appcast and publish it through GitHub.
+Release archives are signed with a project-specific Sparkle EdDSA key. The public key is embedded in the app; the private key stays in the maintainer's macOS Keychain. A local release command generates the signed appcast and publishes it through GitHub.
 
 Maintainers can find the release checklist in [CONTRIBUTING.md](CONTRIBUTING.md#releasing).
 
