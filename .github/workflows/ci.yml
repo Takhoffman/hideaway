@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve dependencies
+        run: swift package resolve
+      - name: Build
+        run: swift build
+      - name: Test
+        run: swift test
+      - name: Build distributable app
+        run: Scripts/build-app.sh 0.0.0 "$GITHUB_RUN_NUMBER"
