@@ -14,5 +14,14 @@
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/Takhoffman/hideaway/releases/download/v0.1.0/Hideaway-0.1.0.zip" length="2639486" type="application/octet-stream" sparkle:edSignature="45Bt11hKr4ohpKHHxqwPiAWzUyofidoCxHMFChcpydQyMfLhIzp6Ml7gUGAz+f5nUVqvn6GbY3yfSeFcYbL+Ag=="/>
         </item>
+        <item>
+            <title>0.1.1</title>
+            <pubDate>Tue, 14 Jul 2026 00:55:30 -0500</pubDate>
+            <link>https://github.com/Takhoffman/hideaway</link>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Takhoffman/hideaway/releases/download/v0.1.1/Hideaway-0.1.1.zip" length="2573270" type="application/octet-stream" sparkle:edSignature="Y/MWS3tqyXHTxspVJ8me6uuzDLjtp4ufO/GCjoVJqobgfA27LqyXKMcyr/LRBZWF/dumvph9UMz8989AX4I6CQ=="/>
+        </item>
     </channel>
 </rss>
